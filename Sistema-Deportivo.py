@@ -24,3 +24,13 @@ resultado TEXT CHECK(resultado IN ('Ganado', 'Perdido', 'Empatado')) NOT NULL
 ''')
 
 # Funciones
+
+def listar_jugadores():
+    cursor.execute("SELECT nombre, edad, posicion FROM jugadores")
+    datos = cursor.fetchall()
+    print("\n📋 Lista de Jugadores:")
+    print(tabulate(datos, headers=["Nombre", "Edad", "Posición"], tablefmt="pretty"))
+
+# HU2: Listado de jugadores
+listar_jugadores()
+
