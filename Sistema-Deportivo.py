@@ -29,9 +29,9 @@ resultado TEXT CHECK(resultado IN ('Ganado', 'Perdido', 'Empatado')) NOT NULL
     cursor.execute("INSERT INTO jugadores (nombre, edad, posicion) VALUES (?, ?, ?)", (nombre, edad, posicion))
     conn.commit()
 
-# HU2: Listado de jugadores
-listar_jugadores() 
-
+registrar_jugador("Carlos Pérez", 25, "Defensa")
+registrar_jugador("Luis Gómez", 22, "Delantero")
+registrar_jugador("Andrés Vidal", 27, "Arquero")
 
 def registrar_partido(fecha, rival, resultado):
     cursor.execute("INSERT INTO partidos (fecha, rival, resultado) VALUES (?, ?, ?)", (fecha, rival, resultado))
