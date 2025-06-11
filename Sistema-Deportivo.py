@@ -24,3 +24,10 @@ resultado TEXT CHECK(resultado IN ('Ganado', 'Perdido', 'Empatado')) NOT NULL
 ''')
 
 # Funciones
+
+ def registrar_jugador(nombre, edad, posicion):
+    cursor.execute("INSERT INTO jugadores (nombre, edad, posicion) VALUES (?, ?, ?)", (nombre, edad, posicion))
+    conn.commit()
+
+# HU2: Listado de jugadores
+listar_jugadores() 
