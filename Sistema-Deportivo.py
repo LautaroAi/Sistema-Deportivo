@@ -38,8 +38,9 @@ def registrar_jugador(nombre, edad, posicion):
     cursor.execute("INSERT INTO jugadores (nombre, edad, posicion) VALUES (?, ?, ?)", (nombre, edad, posicion))
     conn.commit()
 
-# HU2: Listado de jugadores
-listar_jugadores() 
+registrar_jugador("Carlos Pérez", 25, "Defensa")
+registrar_jugador("Luis Gómez", 22, "Delantero")
+registrar_jugador("Andrés Vidal", 27, "Arquero")
 
 
 def registrar_partido(fecha, rival, resultado):
