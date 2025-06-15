@@ -25,16 +25,6 @@ resultado TEXT CHECK(resultado IN ('Ganado', 'Perdido', 'Empatado')) NOT NULL
 
 # Funciones
 
-# HU2: Listado de jugadores
-def listar_jugadores():
-    cursor.execute("SELECT nombre, edad, posicion FROM jugadores")
-    datos = cursor.fetchall()
-    print("\n📋 Lista de Jugadores:")
-    print(tabulate(datos, headers=["Nombre", "Edad", "Posición"], tablefmt="pretty"))
-
-listar_jugadores()
-
-
 # HU1: Registro de jugadores
 def registrar_jugador(nombre, edad, posicion):
     cursor.execute("INSERT INTO jugadores (nombre, edad, posicion) VALUES (?, ?, ?)", (nombre, edad, posicion))
@@ -43,6 +33,16 @@ def registrar_jugador(nombre, edad, posicion):
 registrar_jugador("Carlos Pérez", 25, "Defensa")
 registrar_jugador("Luis Gómez", 22, "Delantero")
 registrar_jugador("Andrés Vidal", 27, "Arquero")
+
+
+# HU2: Listado de jugadores
+def listar_jugadores():
+    cursor.execute("SELECT nombre, edad, posicion FROM jugadores")
+    datos = cursor.fetchall()
+    print("\n📋 Lista de Jugadores:")
+    print(tabulate(datos, headers=["Nombre", "Edad", "Posición"], tablefmt="pretty"))
+
+listar_jugadores()
 
 
 # HU3: Registro de partidos
